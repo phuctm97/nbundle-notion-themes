@@ -1,0 +1,6 @@
+{
+  "permissions": ["activeTab", "storage"],
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; connect-src https://notionthemes.netlify.app; style-src https://fonts.googleapis.com;"
+  }
+}

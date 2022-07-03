@@ -1,0 +1,28 @@
+{
+  "name": "nbundle-app-f51u6",
+  "version": "0.0.5",
+  "productName": "Notion Themes",
+  "description": "Make your Notion pretty with custom themes and fonts",
+  "private": true,
+  "engines": {
+    "node": ">=14.0.0",
+    "yarn": "^1.22.0"
+  },
+  "dependencies": {
+    "@nbundle/react": "^1.0.11",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
+    "recoil": "^0.7.4"
+  },
+  "devDependencies": {
+    "@nbundle/cli": "^1.0.57",
+    "prettier": "^2.7.1"
+  },
+  "scripts": {
+    "develop": "nbundle develop",
+    "build": "nbundle build",
+    "preview": "nbundle preview",
+    "ship": "nbundle ship"
+  }
+}
