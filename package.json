@@ -1,0 +1,23 @@
+{
+  "name": "nbundle-app-f51u6",
+  "version": "0.0.0",
+  "productName": "notion-themes",
+  "description": "Example of a nbundle app",
+  "private": true,
+  "workspaces": [
+    "app"
+  ],
+  "engines": {
+    "node": ">=14.0.0",
+    "yarn": "^1.22.0"
+  },
+  "devDependencies": {
+    "@nbundle/cli": "^1.0.30"
+  },
+  "scripts": {
+    "develop": "nbundle develop",
+    "build": "nbundle build",
+    "preview": "nbundle preview",
+    "ship": "nbundle ship"
+  }
+}
