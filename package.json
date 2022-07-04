@@ -1,8 +1,8 @@
 {
   "name": "nbundle-app-f51u6",
   "version": "0.0.0",
-  "productName": "notion-themes",
-  "description": "Example of a nbundle app",
+  "productName": "Notion Themes",
+  "description": "Make your Notion pretty with custom themes and fonts",
   "private": true,
   "workspaces": [
     "app"
