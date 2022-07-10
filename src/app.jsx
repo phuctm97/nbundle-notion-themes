@@ -1,7 +1,7 @@
 import { TopbarMenuItem } from "@nbundle/react";
 import { AiOutlineFontSize, AiOutlineFormatPainter } from "react-icons/ai";
 
-import "./index.css"
+import "./app.css"
 
 export default function App() {
   return (
