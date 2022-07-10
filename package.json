@@ -12,7 +12,8 @@
     "yarn": "^1.22.0"
   },
   "devDependencies": {
-    "@nbundle/cli": "^1.0.30"
+    "@nbundle/cli": "^1.0.48",
+    "prettier": "^2.7.1"
   },
   "scripts": {
     "develop": "nbundle develop",
