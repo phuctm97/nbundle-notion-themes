@@ -1,4 +1,3 @@
-/* Credit: https://github.com/notionblog/themes/blob/main/light/global.css */
 /* Elements: [SideBar]*/
 .notion-light-theme div[style*="background: rgb(247, 246, 243)"] {
   background: var(--bg-lighter) !important;
@@ -187,4 +186,49 @@
 .notion-light-theme *[style*="color:rgba(212, 76, 71, 1)"],
 .notion-light-theme *[style*="color: rgb(212, 76, 71)"] {
   color: var(--red) !important;
+}
+
+/* Credit: https://github.com/notionblog/themes/blob/main/light/githubLight/theme.css */
+:root {
+  --bg: #f6f8fa;
+  --bg-light: #dfe1e3;
+  --bg-lighter: #ffffff;
+  --fg: #24292f;
+  --fg-light: #57606a;
+  --fg-lighter: #57606a;
+  --main: #2da44e;
+  --hover: #2da44e33;
+  --border: #d0d7de;
+  --selection: #2da44e0f;
+  --gray: #1a1c23;
+  --brown: #af5427;
+  --orange: #f77d26;
+  --yellow: #f7bf26;
+  --green: #41b883;
+  --blue: #0969da;
+  --purple: #8250df;
+  --pink: #e84a72;
+  --red: #cf222e;
+  --bg-gray: #d7d7d7;
+  --bg-brown: #ddb29b;
+  --bg-orange: #ffd4aa;
+  --bg-yellow: #ffecb1;
+  --bg-green: #abdfaa;
+  --bg-blue: #c5e2ef;
+  --bg-purple: #eae4f2;
+  --bg-pink: #f4dfeb;
+  --bg-red: #fbe4e4;
+}
+
+.notion-sidebar {
+  box-shadow: inset -1px 0 0 0 #d0d7de;
+}
+.notion-topbar {
+  box-shadow: inset -18px -1px 5px -1px #d0d7de;
+}
+
+/* Inline Code block */
+span[style*="background:rgba(135,131,120,0.15)"] {
+  color: #24292f !important;
+  background: #afb8c133 !important;
 }
