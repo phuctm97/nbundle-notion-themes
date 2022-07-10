@@ -1,0 +1,222 @@
+/* Elements: [SideBar] */
+.notion-light-theme div[style*="background: rgb(247, 246, 243)"] {
+  background: var(--nbundle-bg-lighter) !important;
+}
+
+/* Elements: [Background, CollectionViewSwitcherHeader] */
+.notion-light-theme *[style*="background: white"],
+.notion-light-theme *[style*="background-color: white"],
+.notion-light-theme
+  div[style*="background: linear-gradient(rgba(255, 255, 255, 0) 0px, white 10px, white 100%)"],
+.notion-light-theme div[style*="background: rgb(253, 253, 253)"] {
+  background: var(--nbundle-bg) !important;
+}
+
+/* Collection blocks light background */
+.notion-light-theme *[style*="background: rgb(247, 246, 243)"] {
+  background: var(--nbundle-bg-lighter) !important;
+}
+
+/* Firefox collection white background fix */
+.notion-light-theme
+  div[style*="rgba(0, 0, 0, 0) linear-gradient(rgba(255, 255, 255, 0) 0px, white 10px, white 100%) repeat scroll 0% 0%"] {
+  background: none !important;
+}
+
+/* Elements: [SVG fill gray] */
+.notion-light-theme *[style*="fill: rgba(55, 53, 47, 0.4)"] {
+  fill: var(--nbundle-fg-lighter) !important;
+}
+
+/* Elements: [SVG fill blue] */
+.notion-light-theme *[style*="fill:#2EAADC"] {
+  fill: var(--nbundle-main) !important;
+}
+
+/* Elements: [Text] */
+.notion-light-theme *[style*="color: rgb(55, 53, 47)"] {
+  color: var(--nbundle-fg) !important;
+}
+.notion-light-theme *[style*="color: rgba(55, 53, 47, 0.6)"] {
+  color: var(--nbundle-fg-light) !important;
+}
+
+/* Lighter text and table of content */
+.notion-light-theme *[style*="color: rgba(25, 23, 17, 0.6)"],
+*[style*="color: rgb(120, 119, 116)"] {
+  color: var(--nbundle-fg-lighter) !important;
+}
+.notion-light-theme *[style*="color: rgb(46, 170, 220)"],
+.notion-light-theme *[style*="color:#2EAADC"] {
+  color: var(--nbundle-main) !important;
+}
+
+/* Elements: [Main Button,Main button at hover] */
+.notion-light-theme div[style*="background: rgb(0, 141, 190)"],
+.notion-light-theme div[style*="background: rgb(46, 170, 220)"] {
+  background: var(--nbundle-main) !important;
+}
+.notion-light-theme div[style*="background: rgb(6, 156, 205)"]:hover {
+  background: var(--nbundle-bg-lighter) !important;
+}
+
+/* Hover background */
+.notion-light-theme div[style*="background: rgba(55, 53, 47, 0.08)"] {
+  background: var(--nbundle-hover) !important;
+}
+
+/* Collection view border */
+.notion-light-theme *[style*="border: 1px solid rgb(233, 233, 231)"] {
+  border: 1px solid var(--nbundle-border) !important;
+}
+.notion-light-theme *[style*="border-right: 1px solid rgb(238, 238, 237)"],
+.notion-light-theme *[style*="border-right: 1px solid rgb(233, 233, 231)"] {
+  border-right: 1px solid var(--nbundle-border) !important;
+}
+.notion-light-theme *[style*="border-bottom: 1px solid rgb(233, 233, 231)"] {
+  border-bottom: 1px solid var(--nbundle-border) !important;
+}
+.notion-light-theme *[style*="border-top: 1px solid rgb(233, 233, 231)"] {
+  border-top: 1px solid var(--nbundle-border) !important;
+}
+
+/* Scrollbar */
+.notion-light-theme .notion-scroller::-webkit-scrollbar {
+  width: 0.4rem;
+  height: 0.4rem;
+  background: var(--nbundle-bg);
+}
+.notion-light-theme .notion-scroller::-webkit-scrollbar * {
+  background: transparent;
+}
+.notion-light-theme .notion-scroller::-webkit-scrollbar-thumb {
+  background: var(--nbundle-bg-light) !important;
+  cursor: pointer;
+  border-radius: 1.6rem;
+}
+.notion-light-theme .notion-scroller::-webkit-scrollbar-track {
+  background: var(--nbundle-bg) !important;
+}
+
+/* Selection */
+.notion-light-theme *::selection,
+.notion-selectable-halo {
+  background: var(--nbundle-selection) !important;
+}
+
+/* Text background, blocks background, tags background */
+.notion-light-theme *[style*="background:rgba(241, 241, 239, 1)"],
+.notion-light-theme *[style*="background: rgb(241, 241, 239)"],
+.notion-light-theme *[style*="background: rgb(227, 226, 224)"] {
+  background: var(--nbundle-bg-gray) !important;
+}
+.notion-light-theme *[style*="background:rgba(244, 238, 238, 1)"],
+.notion-light-theme *[style*="background: rgb(244, 238, 238)"],
+.notion-light-theme *[style*="background: rgb(238, 224, 218)"] {
+  background: var(--nbundle-bg-brown) !important;
+}
+.notion-light-theme *[style*="background:rgba(251, 236, 221, 1)"],
+.notion-light-theme *[style*="background: rgb(251, 236, 221)"],
+.notion-light-theme *[style*="background: rgb(250, 222, 201)"] {
+  background: var(--nbundle-bg-orange) !important;
+}
+.notion-light-theme *[style*="background:rgba(251, 243, 219, 1)"],
+.notion-light-theme *[style*="background: rgb(251, 243, 219)"],
+.notion-light-theme *[style*="background: rgb(253, 236, 200)"] {
+  background: var(--nbundle-bg-yellow) !important;
+}
+.notion-light-theme *[style*="background:rgba(237, 243, 236, 1)"],
+.notion-light-theme *[style*="background: rgb(237, 243, 236)"],
+.notion-light-theme *[style*="background: rgb(219, 237, 219)"] {
+  background: var(--nbundle-bg-green) !important;
+}
+.notion-light-theme *[style*="background:rgba(231, 243, 248, 1)"],
+.notion-light-theme *[style*="background: rgb(231, 243, 248)"],
+.notion-light-theme *[style*="background: rgb(211, 229, 239)"] {
+  background: var(--nbundle-bg-blue) !important;
+}
+.notion-light-theme *[style*="background:rgba(244, 240, 247)"],
+.notion-light-theme *[style*="background: rgba(244, 240, 247, 0.8)"],
+.notion-light-theme *[style*="background: rgb(232, 222, 238)"] {
+  background: var(--nbundle-bg-purple) !important;
+}
+.notion-light-theme *[style*="background: rgba(249, 238, 243, 0.8)"],
+.notion-light-theme *[style*="background: rgb(249, 238, 243)"],
+.notion-light-theme *[style*="background: rgb(245, 224, 233)"] {
+  background: var(--nbundle-bg-pink) !important;
+}
+.notion-light-theme *[style*="background: rgba(253, 235, 236, 1)"],
+.notion-light-theme *[style*="background: rgb(253, 235, 236)"],
+.notion-light-theme *[style*="background: rgb(255, 226, 221)"] {
+  background: var(--nbundle-bg-red) !important;
+}
+
+/* Text colors and quotes */
+.notion-light-theme *[style*="color:rgba(120, 119, 116, 1)"],
+.notion-light-theme *[style*="color:rgb(120, 119, 116)"] {
+  color: var(--nbundle-gray) !important;
+}
+.notion-light-theme *[style*="color:rgba(159, 107, 83, 1)"],
+.notion-light-theme *[style*="color: rgb(159, 107, 83)"] {
+  color: var(--nbundle-brown) !important;
+}
+.notion-light-theme *[style*="color:rgba(217, 115, 13, 1)"],
+.notion-light-theme *[style*="color: rgb(217, 115, 13)"] {
+  color: var(--nbundle-orange) !important;
+}
+.notion-light-theme *[style*="color:rgba(203, 145, 47, 1)"],
+.notion-light-theme *[style*="color: rgb(203, 145, 47)"] {
+  color: var(--nbundle-yellow) !important;
+}
+.notion-light-theme *[style*="color:rgba(68, 131, 97, 1)"],
+.notion-light-theme *[style*="color: rgb(68, 131, 97)"] {
+  color: var(--nbundle-green) !important;
+}
+.notion-light-theme *[style*="color:rgba(51, 126, 169, 1)"],
+.notion-light-theme *[style*="color: rgb(51, 126, 169)"] {
+  color: var(--nbundle-blue) !important;
+}
+.notion-light-theme *[style*="color:rgba(144, 101, 176, 1)"],
+.notion-light-theme *[style*="color: rgb(144, 101, 176)"] {
+  color: var(--nbundle-purple) !important;
+}
+.notion-light-theme *[style*="color:rgba(193, 76, 138, 1)"],
+.notion-light-theme *[style*="color: rgb(193, 76, 138)"] {
+  color: var(--nbundle-pink) !important;
+}
+.notion-light-theme *[style*="color:rgba(212, 76, 71, 1)"],
+.notion-light-theme *[style*="color: rgb(212, 76, 71)"] {
+  color: var(--nbundle-red) !important;
+}
+
+/* Default theme */
+:root {
+  --nbundle-bg: #ffffff;
+  --nbundle-bg-light: #cbc7bf;
+  --nbundle-bg-lighter: #f2f0ec;
+  --nbundle-fg: #525252;
+  --nbundle-fg-light: #515151;
+  --nbundle-fg-lighter: #797978;
+  --nbundle-main: #f2777a;
+  --nbundle-hover: #ffd8d9;
+  --nbundle-border: #dbdbdb;
+  --nbundle-selection: #fae2e66e;
+  --nbundle-gray: #1a1c23;
+  --nbundle-brown: #af5427;
+  --nbundle-orange: #f77d26;
+  --nbundle-yellow: #f7bf26;
+  --nbundle-green: #3dc9ad;
+  --nbundle-blue: #3fc6de;
+  --nbundle-purple: #8931b9;
+  --nbundle-pink: #e84a72;
+  --nbundle-red: #f43e5c;
+  --nbundle-bg-gray: #ccd2db;
+  --nbundle-bg-brown: #e1c4b4;
+  --nbundle-bg-orange: #ffc690;
+  --nbundle-bg-yellow: #f9e3a0;
+  --nbundle-bg-green: #bdebe2;
+  --nbundle-bg-blue: #c5e2ef;
+  --nbundle-bg-purple: #eae4f2;
+  --nbundle-bg-pink: #f4dfeb;
+  --nbundle-bg-red: #fbe4e4;
+}
