@@ -2,16 +2,8 @@ import { useCallback, useEffect, useState } from "react";
 import { TopbarMenuItem, backgroundBridge } from "@nbundle/react";
 import { AiOutlineFontSize, AiOutlineFormatPainter } from "react-icons/ai";
 
-import "./app.css";
-
 export default function App() {
-  const [style, setStyle] = useState();
-  useEffect(() => {
-    if (!style) return;
-    if (!style.isConnected) document.head.append(style);
-    return () => style.remove();
-  }, [style]);
-
+  // Get & set themes from background on startup
   const [themes, setThemes] = useState([]);
   const [theme, setTheme] = useState();
   useEffect(() => {
@@ -19,6 +11,15 @@ export default function App() {
     backgroundBridge.getTheme().then(setTheme);
   }, [setThemes, setTheme]);
 
+  // Render style into DOM
+  const [style, setStyle] = useState();
+  useEffect(() => {
+    if (!style) return;
+    if (!style.isConnected) document.head.append(style);
+    return () => style.remove();
+  }, [style]);
+
+  //  Compile theme into style
   useEffect(() => {
     if (!theme) return;
     if (!theme.css) {
