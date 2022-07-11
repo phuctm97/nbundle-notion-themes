@@ -1,36 +1,61 @@
-import { TopbarMenuItem } from "@nbundle/react";
+import { useCallback, useEffect, useState } from "react";
+import { TopbarMenuItem, backgroundBridge } from "@nbundle/react";
 import { AiOutlineFontSize, AiOutlineFormatPainter } from "react-icons/ai";
 
-import "./app.css"
+import "./app.css";
 
 export default function App() {
+  const [style, setStyle] = useState();
+  useEffect(() => {
+    if (!style) return;
+    if (!style.isConnected) document.head.append(style);
+    return () => style.remove();
+  }, [style]);
+
+  const [themes, setThemes] = useState([]);
+  const [theme, setTheme] = useState();
+  useEffect(() => {
+    backgroundBridge.getThemes().then(setThemes);
+    backgroundBridge.getTheme().then(setTheme);
+  }, [setThemes, setTheme]);
+
+  useEffect(() => {
+    if (!theme) return;
+    if (!theme.css) {
+      backgroundBridge.getCss(theme).then((css) => {
+        const themeWithCss = { ...theme, css };
+        setThemes((themes) =>
+          themes.map((t) => (t === theme ? themeWithCss : t))
+        );
+        setTheme(themeWithCss);
+      });
+      return;
+    }
+    const style = document.createElement("style");
+    style.append(document.createTextNode(theme.css));
+    setStyle(style);
+    backgroundBridge.setTheme(theme);
+  }, [theme, setThemes, setTheme, setStyle]);
+
+  const handleClickTheme = useCallback(
+    (name) => setTheme(themes.find((t) => t.name === name)),
+    [themes, setTheme]
+  );
   return (
     <>
       <TopbarMenuItem
         type="select"
         text="Set custom theme"
         icon={AiOutlineFormatPainter}
-        value="Notion Default"
         optionsTitle="Set theme"
-        options={[
-          "Notion Default",
-          "Laser Wave",
-          "Material Ocean",
-          "Dracula",
-          "Deep Dark",
-          "Github Light",
-          "Github Dark",
-          "Kawaii",
-          "Yotsuba",
-          "Base 16 Eighties",
-          "Library",
-        ]}
+        options={themes.map((t) => t.name)}
+        value={theme ? theme.name : ""}
+        onClickOption={handleClickTheme}
       />
       <TopbarMenuItem
         type="select"
         text="Set custom font"
         icon={AiOutlineFontSize}
-        value="Notion Default"
         optionsTitle="Set font"
         options={[
           "Notion Default",
@@ -77,6 +102,7 @@ export default function App() {
           "Abel",
           "Exo 2",
         ]}
+        value="Notion Default"
       />
     </>
   );

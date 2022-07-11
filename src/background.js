@@ -14,10 +14,10 @@ export async function getCss(theme) {
   return [globalCss, themeCss].join("\n");
 }
 
-export async function getCurrentTheme() {
+export async function getTheme() {
   await chrome.storage.local.get(["name", "img", "style", "path", "css"]);
 }
 
-export async function setCurrentTheme(theme) {
+export async function setTheme(theme) {
   await chrome.storage.local.set(theme);
 }
