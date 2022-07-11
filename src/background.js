@@ -21,17 +21,17 @@ export async function getCss(theme) {
 }
 
 export async function getTheme() {
-  const value = await chrome.storage.local.get([
-    "name",
-    "img",
-    "style",
-    "path",
-    "css",
-  ]);
+  const value = await new Promise((resolve, reject) =>
+    chrome.storage.local.get(["name", "img", "style", "path", "css"], (value) =>
+      chrome.runtime.lastError
+        ? reject(chrome.runtime.lastError)
+        : resolve(value)
+    )
+  );
   if (!value.name || !value.style || !value.path) return;
   return value;
 }
 
-export async function setTheme(theme) {
-  await chrome.storage.local.set(theme);
+export function setTheme(theme) {
+  chrome.storage.local.set(theme);
 }
