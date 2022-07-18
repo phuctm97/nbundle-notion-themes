@@ -8,17 +8,17 @@ import {
 import { AiOutlineFontSize, AiOutlineFormatPainter } from "react-icons/ai";
 
 const themesState = selector({
-  key: "themes",
+  key: `@${process.env.NBUNDLE_APP_ID}/themes`,
   get: () => backgroundBridge.getThemes(),
 });
 
 const themeOptionsState = selector({
-  key: "themeOptions",
+  key: `@${process.env.NBUNDLE_APP_ID}/themeOptions`,
   get: ({ get }) => ["Default", ...Object.keys(get(themesState))],
 });
 
 const themeOptionState = atom({
-  key: "themeOption",
+  key: `@${process.env.NBUNDLE_APP_ID}/themeOption`,
   default: backgroundBridge
     .getSettings()
     .then(({ theme }) => (theme ? theme : "Default")),
@@ -30,7 +30,7 @@ const themeOptionState = atom({
 });
 
 const themeStyleState = selector({
-  key: "themeStyle",
+  key: `@${process.env.NBUNDLE_APP_ID}/themeStyle`,
   get: async ({ get }) => {
     const themes = get(themesState);
     const themeOption = get(themeOptionState);
@@ -45,7 +45,7 @@ const themeStyleState = selector({
 });
 
 const fontOptionsState = selector({
-  key: "fontOptions",
+  key: `@${process.env.NBUNDLE_APP_ID}/fontOptions`,
   get: async () => {
     const fonts = await backgroundBridge.getFonts();
     return ["Default", ...fonts];
@@ -53,7 +53,7 @@ const fontOptionsState = selector({
 });
 
 const fontOptionState = atom({
-  key: "fontOption",
+  key: `@${process.env.NBUNDLE_APP_ID}/fontOption`,
   default: backgroundBridge
     .getSettings()
     .then(({ font }) => (font ? font : "Default")),

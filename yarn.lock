@@ -42,10 +42,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@nbundle/cli@^1.0.57":
-  version "1.0.57"
-  resolved "https://registry.yarnpkg.com/@nbundle/cli/-/cli-1.0.57.tgz#44248d2855082f6726003ca1627cc062fba7f98b"
-  integrity sha512-TznGlNr6x5UB8PvHrT2AG1sIi/TUkXL+GUQbAhGO520H74wVSa4/aXwU7CUPqGroq04NUw0DAzIwD8Ei9ffTTQ==
+"@nbundle/cli@^1.0.58":
+  version "1.0.58"
+  resolved "https://registry.yarnpkg.com/@nbundle/cli/-/cli-1.0.58.tgz#609c09c4133df700c8fc84c917504e7b928b7de7"
+  integrity sha512-8MNOHJhNDjU8Ht3TGxR7V2mvHdUhCaUIxMZpyMBX8AvS4DQNVu9Bc+hQKJa+mSBhM+d8tPwexi+1RkZ/KsC19Q==
   dependencies:
     css-loader "^6.7.1"
     sharp "^0.30.7"
@@ -59,10 +59,10 @@
   dependencies:
     react-icons "^4.4.0"
 
-"@nbundle/react@^1.0.11":
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/@nbundle/react/-/react-1.0.11.tgz#8c112eec3fede6a639e538cd8cbd44753f1072a6"
-  integrity sha512-E9Udqk5zScWwWwMQaewRPN71k4RGsvLvK9a33M3JZTe8dyeVJA9rDcKdCjpixcozfqasrWGAwR01iCzDio8x5w==
+"@nbundle/react@^1.0.12":
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/@nbundle/react/-/react-1.0.12.tgz#eefd2ed54b92cd6f48a1f58f9821a26f7a52162c"
+  integrity sha512-IYbeuTvgYQMX+EbHbOWdMVD1w45Y748jSAKwst8SXjvo4c4mLCYOtGymAkjUes11ihFVsGvmn02JslbIUE6qQg==
   dependencies:
     "@nbundle/react-types" "^1.0.3"
     react-icons "^4.4.0"

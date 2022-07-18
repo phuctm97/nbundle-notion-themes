@@ -9,14 +9,14 @@
     "yarn": "^1.22.0"
   },
   "dependencies": {
-    "@nbundle/react": "^1.0.11",
+    "@nbundle/react": "^1.0.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "recoil": "^0.7.4"
   },
   "devDependencies": {
-    "@nbundle/cli": "^1.0.57",
+    "@nbundle/cli": "^1.0.58",
     "prettier": "^2.7.1"
   },
   "scripts": {
