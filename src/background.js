@@ -1,5 +1,5 @@
 // Fetch data from APIs, save & load user settings to secure storage
-// Export functions will be available in app.jsx via backgroundBridge
+// Exported functions will be available in app.jsx via background bridge APIs
 
 // Get all available themes
 export async function getThemes() {

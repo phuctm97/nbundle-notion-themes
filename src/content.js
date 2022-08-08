@@ -1,5 +1,5 @@
-// To comply with the content security policy, we'll need to add/remove font <style> in content scripts (because it uses Google APIs to load fonts)
-// Export functions will be available in app.jsx via contentBridge
+// To comply with the Notion's content security policy, the app needs to add/remove font <style> in content scripts (because it uses Google APIs to load fonts)
+// Exported functions will be available in app.jsx via content bridge APIs
 
 const fontStyle = document.createElement("style");
 

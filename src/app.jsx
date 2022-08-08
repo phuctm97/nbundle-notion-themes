@@ -87,11 +87,18 @@ export default function App() {
   const fontOptions = useRecoilValue(fontOptionsState);
   const [fontOption, setFontOption] = useRecoilState(fontOptionState);
   useEffect(() => {
-    if (!fontOption || fontOption === "Default") {
-      contentBridge.removeFontStyle(); // No custom font, reset font CSS
+    if (
+      // Custom fonts are not supported on Firefox because content security policy for content scripts are not supported
+      process.env.NODE_PLATFORM === "firefox" ||
+      // No custom font
+      !fontOption ||
+      fontOption === "Default"
+    ) {
+      // Reset font CSS
+      contentBridge.removeFontStyle();
       return;
     }
-    // Apply CSS to use Google Fonts
+    // Apply CSS by using Google Fonts & content bridge APIs (see content.js) to comply with content security policy
     const fontUrl = fontOption.replace(/\s/g, "+");
     contentBridge.applyFontStyle(`
       @import url('https://fonts.googleapis.com/css2?family=${fontUrl}:wght@300;400;500;700&display=swap');
@@ -100,7 +107,10 @@ export default function App() {
       }
     `);
   }, [fontOption]);
-  useEffect(() => () => contentBridge.removeFontStyle(), []);
+  useEffect(() => {
+    // Reset font CSS when app is closed/unmounted
+    return () => contentBridge.removeFontStyle();
+  }, []);
 
   return (
     <>
@@ -114,7 +124,7 @@ export default function App() {
         value={themeOption}
         onClickOption={setThemeOption}
       />
-      {/* Quickly change fonts, won't be available on Firefox because custom content security policies for content scripts are not supported */}
+      {/* Quickly change fonts, won't be available on Firefox */}
       {process.env.NODE_PLATFORM !== "firefox" && (
         <TopbarMenuItem
           type="select"
