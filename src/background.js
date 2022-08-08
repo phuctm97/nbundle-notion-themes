@@ -1,3 +1,7 @@
+// Fetch data from APIs, save & load user settings to secure storage
+// Export functions will be available in app.jsx via backgroundBridge
+
+// Get all available themes
 export async function getThemes() {
   const res = await fetch("https://notionthemes.netlify.app/themes.json");
   if (!res.ok) throw new Error(`Couldn't download themes: HTTP ${res.status}.`);
@@ -5,6 +9,7 @@ export async function getThemes() {
   return themes;
 }
 
+// Get all available fonts
 export async function getFonts() {
   const res = await fetch("https://notionthemes.netlify.app/fonts.json");
   if (!res.ok) throw new Error(`Couldn't download fonts: HTTP ${res.status}.`);
@@ -12,6 +17,7 @@ export async function getFonts() {
   return fonts;
 }
 
+// Get CSS for a given theme
 export async function getCss(theme) {
   const globalCss = await fetch(
     `https://notionthemes.netlify.app/${theme.style}/global.css`
@@ -30,6 +36,7 @@ export async function getCss(theme) {
 
 export const settingsKeys = ["theme", "font"];
 
+// Get user settings
 export function getSettings() {
   return new Promise((resolve, reject) =>
     chrome.storage.local.get(settingsKeys, (settings) =>
@@ -40,6 +47,7 @@ export function getSettings() {
   );
 }
 
+// Save user settings
 export function setSettings(settings) {
   return new Promise((resolve, reject) =>
     chrome.storage.local.set(
