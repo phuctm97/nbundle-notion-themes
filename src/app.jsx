@@ -1,24 +1,30 @@
 import { useEffect } from "react";
-import { atom, selector, useRecoilState, useRecoilValue } from "recoil";
 import {
   TopbarMenuItem,
   backgroundBridge,
   contentBridge,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
 } from "@nbundle/react";
 import { AiOutlineFontSize, AiOutlineFormatPainter } from "react-icons/ai";
 
+// This app uses nbundle built-in state management APIs (which inherits from https://recoiljs.org)
+// Apps are free to use any state management APIs they want, but the built-in APIs are recommended, best in class dev tools, & easy to use.
+
 const themesState = selector({
-  key: `@${process.env.NBUNDLE_APP_ID}/themes`,
+  key: "themes",
   get: () => backgroundBridge.getThemes(), // Get themes from background
 });
 
 const themeOptionsState = selector({
-  key: `@${process.env.NBUNDLE_APP_ID}/themeOptions`,
+  key: "themeOptions",
   get: ({ get }) => ["Default", ...Object.keys(get(themesState))], // Add "Default" to theme options for no custom theme
 });
 
 const themeOptionState = atom({
-  key: `@${process.env.NBUNDLE_APP_ID}/themeOption`,
+  key: "themeOption",
   default: backgroundBridge
     .getSettings()
     .then(({ theme }) => (theme ? theme : "Default")), // Use saved theme or "Default"
@@ -30,7 +36,7 @@ const themeOptionState = atom({
 });
 
 const themeStyleState = selector({
-  key: `@${process.env.NBUNDLE_APP_ID}/themeStyle`,
+  key: "themeStyle",
   get: async ({ get }) => {
     // Compile theme into DOM stylesheet
     const themes = get(themesState);
@@ -46,7 +52,7 @@ const themeStyleState = selector({
 });
 
 const fontOptionsState = selector({
-  key: `@${process.env.NBUNDLE_APP_ID}/fontOptions`,
+  key: "fontOptions",
   get: async () => {
     // Get fonts from background, plus "Default" (no custom font)
     const fonts = await backgroundBridge.getFonts();
@@ -55,7 +61,7 @@ const fontOptionsState = selector({
 });
 
 const fontOptionState = atom({
-  key: `@${process.env.NBUNDLE_APP_ID}/fontOption`,
+  key: "fontOption",
   default: backgroundBridge
     .getSettings()
     .then(({ font }) => (font ? font : "Default")), // Use saved font or "Default"
