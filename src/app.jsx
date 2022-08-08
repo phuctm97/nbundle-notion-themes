@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import {
   TopbarMenuItem,
+  Style,
   backgroundBridge,
   contentBridge,
   atom,
@@ -35,19 +36,16 @@ const themeOptionState = atom({
   ],
 });
 
-const themeStyleState = selector({
-  key: "themeStyle",
+const themeCssState = selector({
+  key: "themeCss",
   get: async ({ get }) => {
-    // Compile theme into DOM stylesheet
+    // Compile theme into CSS
     const themes = get(themesState);
     const themeOption = get(themeOptionState);
     if (!themeOption || themeOption === "Default") return;
     const theme = themes[themeOption];
     if (!theme) return;
-    const css = await backgroundBridge.getCss(theme);
-    const style = document.createElement("style");
-    style.innerHTML = css;
-    return style;
+    return backgroundBridge.getCss(theme);
   },
 });
 
@@ -75,14 +73,7 @@ const fontOptionState = atom({
 export default function App() {
   const themeOptions = useRecoilValue(themeOptionsState);
   const [themeOption, setThemeOption] = useRecoilState(themeOptionState);
-
-  const themeStyle = useRecoilValue(themeStyleState);
-  useEffect(() => {
-    if (!themeStyle) return; // No custom theme, reset theme CSS
-    // Re-apply theme style whenever it changes
-    if (!themeStyle.isConnected) document.head.append(themeStyle);
-    return () => themeStyle.remove();
-  }, [themeStyle]);
+  const themCss = useRecoilValue(themeCssState);
 
   const fontOptions = useRecoilValue(fontOptionsState);
   const [fontOption, setFontOption] = useRecoilState(fontOptionState);
@@ -136,6 +127,8 @@ export default function App() {
           onClickOption={setFontOption}
         />
       )}
+      {/* Dynamically render theme CSS */}
+      {themCss && <Style>{themCss}</Style>}
     </>
   );
 }
