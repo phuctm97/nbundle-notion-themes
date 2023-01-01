@@ -21,7 +21,7 @@
     "@nbundle/cli": "^1.0.66",
     "cspell": "^6.13.3",
     "husky": "^8.0.2",
-    "lint-staged": "^13.0.3",
+    "lint-staged": "^13.1.0",
     "prettier": "^2.8.0"
   },
   "scripts": {
