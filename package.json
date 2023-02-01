@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^17.3.0",
-    "@commitlint/config-angular": "^17.3.0",
+    "@commitlint/config-angular": "^17.4.2",
     "@commitlint/prompt-cli": "^17.4.2",
     "@nbundle/cli": "^1.0.66",
     "cspell": "^6.13.3",
